@@ -24,8 +24,8 @@ pipeline {
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
                     sh '''
-                        echo "Creating S3 bucket: awsdemojenkins6745ght1 in region: us-east-1"
-                        aws s3api create-bucket --bucket awsdemojenkins6745ght1 --region us-east-1 --create-bucket-configuration LocationConstraint=ap-southeast-1 || echo "Bucket may already exist"
+                        echo "Creating S3 bucket: koteshbucket in region: us-east-1"
+                        aws s3api create-bucket --bucket koteshbucket --region us-east-1 --create-bucket-configuration LocationConstraint=ap-southeast-1 || echo "Bucket may already exist"
                         echo "Verifying bucket..."
                         aws s3 ls | grep awsdemojenkins6745ght1 || echo "Bucket not found"
                     '''
