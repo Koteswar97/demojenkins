@@ -25,7 +25,7 @@ pipeline {
                 ]]) {
                     sh '''
                         echo "Creating S3 bucket: koteshbucket-767397794296123 in region: us-east-1"
-                        aws s3api create-bucket --bucket koteshbucket-767397794296123 --region us-east-1 --create-bucket-configuration LocationConstraint=us-east-1 || echo "Bucket may already exist"
+                        aws s3api create-bucket --bucket koteshbucket-767397794296123 --region us-east-1 --create-bucket-configuration LocationConstraint=ap-southeast-1 || echo "Bucket may already exist"
                         echo "Verifying bucket..."
                         aws s3 ls | grep koteshbucket-767397794296123 || echo "Bucket not found"
                     '''
