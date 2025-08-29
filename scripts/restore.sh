@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-BUCKET_NAME="your-s3-bucket-name"
+BUCKET_NAME="koteshbucket-767397794296123456789"
 LATEST_BACKUP=$(aws s3 ls "s3://$BUCKET_NAME/" | sort | tail -n 1 | awk '{print $4}')
 
 echo "Downloading latest backup: $LATEST_BACKUP"
