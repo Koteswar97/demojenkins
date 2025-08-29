@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+BUCKET_NAME="your-s3-bucket-name"
+TIMESTAMP=$(date +%F-%H-%M)
+BACKUP_FILE="/tmp/jenkins-backup-$TIMESTAMP.tar.gz"
+
+sudo tar -czvf $BACKUP_FILE /var/lib/jenkins
+aws s3 cp $BACKUP_FILE s3://$BUCKET_NAME/
+rm -f $BACKUP_FILE
+
+echo "Backup completed and uploaded to S3: $BACKUP_FILE"
