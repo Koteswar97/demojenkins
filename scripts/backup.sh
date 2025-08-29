@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-BUCKET_NAME="your-s3-bucket-name"
+BUCKET_NAME="koteshbucket-767397794296123456789"
 TIMESTAMP=$(date +%F-%H-%M)
 BACKUP_FILE="/tmp/jenkins-backup-$TIMESTAMP.tar.gz"
 
