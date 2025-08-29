@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -16,7 +15,6 @@ pipeline {
                     aws s3api create-bucket \
                         --bucket koteshbucket-767397794296123456789 \
                         --region us-east-1 \
-                        --create-bucket-configuration LocationConstraint=us-east-1 \
                         || echo "Bucket may already exist"
 
                     echo "Verifying bucket..."
